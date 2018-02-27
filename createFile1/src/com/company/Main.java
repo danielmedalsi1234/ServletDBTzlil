@@ -18,7 +18,8 @@ public class Main {
         //createFileWitheIfAndElse();
         //createAndWriteTofile();
         //createAndWriteTofileWithOutputstream("outputstream 2");
-        WriteToExistfileWithOutputstream("it workkkk mother fucker!!!!");
+        //WriteToExistfileWithOutputstream("it workkkk mother fucker!!!!");
+        readFromFile();
 
     }
 
@@ -121,14 +122,36 @@ public class Main {
     }
 
     public static void readFromFile(){
-        File file = new File(pathToDesktop + "myTextOutputstream");
-        if (!file.exists()){
-            System.out.println("the file doesnt exist");
-        }else {
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(pathToDesktop + "myTextOutputstream.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = null;
             try {
-                InputStream inputStream = new FileInputStream(file);
+                line = br.readLine();
+                System.out.println(line);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-            } catch (FileNotFoundException e) {
+            while (line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                try {
+                    line = br.readLine();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            String everything = sb.toString();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
