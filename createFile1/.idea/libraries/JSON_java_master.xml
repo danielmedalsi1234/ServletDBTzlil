@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="JSON-java-master">
+    <ANNOTATIONS>
+      <root url="file://$USER_HOME$/Downloads/JSON-java-master" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/Downloads/JSON-java-master" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$USER_HOME$/Downloads/JSON-java-master" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://$USER_HOME$/Downloads/JSON-java-master" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/JSON-java-master" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/JSON-java-master" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Downloads/JSON-java-master" recursive="false" type="SOURCES" />
+  </library>
+</component>
