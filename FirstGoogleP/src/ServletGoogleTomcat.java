@@ -3,9 +3,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class ServletGoogleTomcat extends HttpServlet {
     public static final String SET_MESSAGE = "set_message=";
@@ -17,10 +17,20 @@ public class ServletGoogleTomcat extends HttpServlet {
         messages = new ArrayList<>();
         messages.add("test1");
         messages.add("test2");
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Hello World!</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h1>daniel medalsi</h1>");
+        out.println("</body>");
+        out.println("</html>");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,6 +53,7 @@ public class ServletGoogleTomcat extends HttpServlet {
             }
             this.messages.add(queryString.substring(SET_MESSAGE.length()));
             response.getWriter().write("ok");
+
         }
     }
 }
